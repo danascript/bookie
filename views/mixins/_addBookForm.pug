@@ -1,0 +1,31 @@
+mixin addBookForm(book = {})
+  form.card(action=`/addBook` method='POST')
+
+    label(for='title') Title
+    input(type='text' name='title' id='title' required)
+
+    label(for='author') Author
+    input(type='text' name='author' id='author' required)
+
+    label(for='isbn') ISBN
+    input(type='text' name='isbn' id='isbn' required)
+
+    label(for='link') Link
+    input(type='text' name='link' id='link' required)
+
+    label(for='published') Published
+    //- SHOULD BE A DATE PICKER
+    input(type='date' name='published' id='published' required)
+
+    label(for='description') Description
+    textarea(name='description')
+
+    - const bookTags = book.tags || []
+      ul.container
+        .row.mt-2.d-flex.flex-row
+          each tag in helpers.tags
+            .tag.p-2.custom-control.custom-checkbox
+              input.custom-control-input(type='checkbox' id=tag value=tag name='tags' checked=(bookTags.includes(tag)))
+              label.custom-control-label(for=tag)= tag
+
+    input(type='submit' value='Add It!' class='btn btn-light')

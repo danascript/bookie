@@ -29,7 +29,7 @@ mongoose.connect(
     })
 
 // load all models
-require('./models/ToDo')
+require('./models/Book')
 
 // load the app
 const app = require('./app')

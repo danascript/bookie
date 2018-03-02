@@ -1,10 +1,12 @@
 @charset "UTF-8";
 /**
-  * Contents
-  *
-  *   1. Imports
-  *   2. Starter Template
-  */
+* Contents
+*
+*   1. Imports
+*   2. Global Styles
+*   3. Starter Template
+*   4. Media Queries
+*/
 /* 1. Imports
 -------------------------------------------*/
 /*!
@@ -40,7 +42,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: "Quicksand", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -65,7 +67,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Quicksand", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4370,7 +4372,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Quicksand", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4455,7 +4457,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Quicksand", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6966,6 +6968,8 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 
+/* 2. Global Styles
+-------------------------------------------*/
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -9296,59 +9300,93 @@ a.text-dark:hover, a.text-dark:focus {
   overflow: visible;
   clip: auto; }
 
-/* 2. Starter Template
+/* 3. Starter Template
 -------------------------------------------*/
-main {
-  padding: 1.5rem 0; }
+.alert {
+  padding: 1.5rem 1.25rem;
+  height: 60px; }
 
-.hidden {
-  display: none; }
+body {
+  margin-top: 80px; }
 
-.custom-boilerplate h1 {
-  color: #217cb9;
-  margin-bottom: 1.5rem; }
+#navigation {
+  background-color: white; }
+  #navigation .container {
+    width: 55%; }
+  #navigation .navbar-brand {
+    color: #df0038; }
+  #navigation .navbar-nav {
+    margin-top: -5px; }
 
-.components {
-  margin-top: 2rem;
-  margin-bottom: 5rem; }
-  .components h2 {
-    color: #8f8f8f;
-    font-size: 1.75rem;
-    margin: 1rem 0; }
+#navigationLinks {
+  padding-top: .5rem;
+  list-style: none; }
+  #navigationLinks li {
+    color: #df0038;
+    font-weight: 300;
+    margin: .3rem .8rem;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s; }
+    #navigationLinks li::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: #df0038;
+      -webkit-transition: width .3s ease-in;
+      -o-transition: width .3s ease-in;
+      transition: width .3s ease-in; }
+    #navigationLinks li:hover::after {
+      width: 100%; }
+    #navigationLinks li a {
+      color: inherit;
+      display: block;
+      text-decoration: none; }
+      #navigationLinks li a:hover {
+        text-decoration: none;
+        font-weight: 400; }
 
-.accordion .card {
-  margin-bottom: 0.25rem; }
+#mainImage {
+  width: 50%;
+  padding-top: 5%; }
+  #mainImage img {
+    height: 265px; }
+  #mainImage h2 {
+    margin-bottom: 1rem; }
+  #mainImage a {
+    margin-right: 1rem;
+    color: white; }
+    #mainImage a:hover {
+      background-color: #2f9752;
+      border-color: #2f9752; }
 
-.accordion .card-header {
-  padding: 0.25rem; }
-  .accordion .card-header .btn-link {
-    font-weight: 700;
-    text-align: left;
-    display: block;
-    width: 100%; }
-
-#todo-list-loading {
-  font-size: 2rem;
-  display: none; }
-  #todo-list-loading span {
-    margin-left: 0.5rem;
-    font-size: 1rem; }
-
-#todo-list-display {
-  line-height: 1.5rem; }
-  #todo-list-display .icon-remove {
-    color: #666;
-    cursor: pointer;
-    line-height: inherit;
-    margin-left: 0.25rem; }
-    #todo-list-display .icon-remove:hover {
-      color: #cc0000; }
-
-.todo-form-new {
-  display: none;
-  margin-top: 1rem; }
-
-.flash-messages {
-  margin-top: 1rem; }
+#formContainer {
+  margin-top: 7rem; }
+  #formContainer .card {
+    border: none; }
+    #formContainer .card label {
+      margin: 1rem .3rem 0 0; }
+    #formContainer .card input {
+      padding: .4rem; }
+    #formContainer .card .tag {
+      margin: .5rem;
+      border-radius: 5px; }
+      #formContainer .card .tag input {
+        margin: 0;
+        padding: 0; }
+        #formContainer .card .tag input:checked + label {
+          color: #df0038; }
+      #formContainer .card .tag label {
+        margin: .3rem .6rem .3rem 1.7rem; }
+      #formContainer .card .tag .custom-control-label::before {
+        top: 1rem;
+        left: .4rem; }
+      #formContainer .card .tag .custom-control-label::after {
+        top: 1rem;
+        left: .4rem; }
+      #formContainer .card .tag .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+      #formContainer .card .tag .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: #df0038; }
 
 /*# sourceMappingURL=style.css.map*/

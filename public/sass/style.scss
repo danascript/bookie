@@ -1,95 +1,166 @@
 /**
-  * Contents
-  *
-  *   1. Imports
-  *   2. Starter Template
-  */
+* Contents
+*
+*   1. Imports
+*   2. Global Styles
+*   3. Starter Template
+*   4. Media Queries
+*/
 
 /* 1. Imports
 -------------------------------------------*/
 
 @import "bootstrap-custom";
 @import "~bootstrap/scss/bootstrap";
+@import "colors";
 
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome.scss";
 
-/* 2. Starter Template
+/* 2. Global Styles
 -------------------------------------------*/
 
-main {
-  padding: 1.5rem 0;
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+
+/* 3. Starter Template
+-------------------------------------------*/
+
+// FLASH ALERTS
+
+.alert {
+  padding: 1.5rem 1.25rem;
+  height: 60px;
 }
 
-.hidden {
-  display: none;
+
+// GENERAL STYLING RULES:
+
+body {
+  margin-top: 80px;
 }
 
-.custom-boilerplate {
-  h1 {
-    color: #217cb9;
-    margin-bottom: 1.5rem;
-  }
-}
 
-.components {
-  margin-top: 2rem;
-  margin-bottom: 5rem;
+#navigation {
+  background-color: white;
 
-  h2 {
-    color: rgb(143, 143, 143);
-    font-size: 1.75rem;
-    margin: 1rem 0;
-  }
-}
-
-.accordion {
-  .card {
-    margin-bottom: 0.25rem;
+  .container {
+    width: 55%;
   }
 
-  .card-header {
-    padding: 0.25rem;
+  .navbar-brand {
+    color: $pink;
+  }
 
-    .btn-link {
-      font-weight: 700;
-      text-align: left;
+  .navbar-nav {
+    margin-top: -5px;
+  }
+
+}
+
+#navigationLinks {
+  padding-top: .5rem;
+  list-style: none;
+  
+  li {
+    color: $pink;
+    font-weight: 300;
+    margin: .3rem .8rem;
+    transition: 2s;
+    // text-shadow: 2px 2px 4px black;
+    
+    &::after {
+      content: '';
       display: block;
+      width: 0;
+      height: 1px;
+      background: $pink;
+      transition: width .3s ease-in;
+      // box-shadow: 0 0 2px $pink;
+    }
+
+    &:hover::after {
       width: 100%;
     }
-  }
-}
 
-#todo-list-loading {
-  font-size: 2rem;
-  display: none;
+    a {
+      color: inherit;
+      display: block;
+      text-decoration: none;
 
-  span {
-    margin-left: 0.5rem;
-    font-size: 1rem;
-  }
-}
-
-#todo-list-display {
-  line-height: 1.5rem;
-
-  .icon-remove {
-    color: #666;
-    cursor: pointer;
-    line-height: inherit;
-    margin-left: 0.25rem;
-
-    &:hover {
-      color: #cc0000;
+      &:hover {
+        text-decoration: none;
+        font-weight: 400;
+      }
     }
   }
 }
 
-.todo-form-new {
-  display: none;
-  margin-top: 1rem;
+#mainImage {
+  width: 50%;
+  padding-top: 5%;
+  img {
+    height: 265px;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    margin-right: 1rem;
+    color: white;
+
+    &:hover {
+      background-color: $green;
+      border-color: $green;
+    }
+  }
 }
 
-.flash-messages {
-  margin-top: 1rem;
+#formContainer {
+  margin-top: 7rem;
+
+  .card {
+    border: none;
+
+    label {
+      margin: 1rem .3rem 0 0;
+    }
+
+    input {
+      padding: .4rem;
+    }
+
+    .tag {
+      margin: .5rem;
+      border-radius: 5px;
+      
+      input{
+        margin: 0;
+        padding: 0;
+
+        &:checked + label {
+          color: $pink;
+        }
+      }
+
+      label {
+        margin: .3rem .6rem .3rem 1.7rem;
+      }
+
+      & .custom-control-label::before {
+        top: 1rem;
+        left: .4rem;
+      }
+
+      & .custom-control-label::after {
+        top: 1rem;
+        left: .4rem;
+      }
+      & .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, 
+      & .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $pink;
+      }
+    }
+  }
 }

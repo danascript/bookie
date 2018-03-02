@@ -1,24 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { catchErrors } = require('../handlers/errorHandlers')
-const toDoController = require('../controllers/toDoController')
+const bookController = require('../controllers/bookController')
 
 // The main route
-router.get('/', (request, response) => {
-    response.render('home', {
-        title: 'Home',
-        description: 'My lovely first website with Node.js'
-    })
-})
+router.get('/', bookController.mainPage)
+router.get('/addbook', bookController.addBook)
 
-// Get all todo items
-router.get('/todos', catchErrors(toDoController.getToDoList))
+router.post('/addBook', catchErrors(bookController.saveBook))
 
-// Add a todo item
-router.post('/todos/add', catchErrors(toDoController.createToDo))
+router.get('/books/:slug', catchErrors(bookController.getBookBySlug))
 
-// Delete a todo item
-router.get('/todos/:id/delete', catchErrors(toDoController.deleteToDo))
-
+router.get('/tags')
 // Export our router
 module.exports = router;

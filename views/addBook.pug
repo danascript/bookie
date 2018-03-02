@@ -1,0 +1,10 @@
+extends layout
+
+include mixins/_addBookForm
+
+block content
+  .container#formContainer
+    .row.d-flex.justify-content-center
+      .col-10
+        h2= title
+        +addBookForm(book)
