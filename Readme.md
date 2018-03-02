@@ -1,3 +1,3 @@
 # bookie
 
-An open source project to gather cpding-related books.
+An open source project to gather coding-related books.
