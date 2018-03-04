@@ -164,3 +164,29 @@ body {
     }
   }
 }
+
+#bookPage {
+  margin-top: 7rem;
+  border: 2px solid $pink;
+  border-radius: 1rem;
+  padding: 3rem;
+
+  .book {
+    &-info {
+      margin-bottom: 1rem;
+      
+      h6 {
+        color: rgb(109, 109, 109);
+        text-transform: uppercase;
+      }
+    }
+
+    &-otherinfo {
+      
+      .bold {
+        font-weight: bold;
+      }
+      
+    }
+  }
+}

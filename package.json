@@ -39,7 +39,8 @@
     "nodemon": "^1.14.12",
     "postcss-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "validator": "9.4.1"
   },
   "author": "Dominik Hanke",
   "license": "MIT",

@@ -9389,4 +9389,17 @@ body {
       #formContainer .card .tag .custom-control-input:checked ~ .custom-control-label::before {
         background-color: #df0038; }
 
+#bookPage {
+  margin-top: 7rem;
+  border: 2px solid #df0038;
+  border-radius: 1rem;
+  padding: 3rem; }
+  #bookPage .book-info {
+    margin-bottom: 1rem; }
+    #bookPage .book-info h6 {
+      color: #6d6d6d;
+      text-transform: uppercase; }
+  #bookPage .book-otherinfo .bold {
+    font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map*/

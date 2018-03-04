@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const slug = require('slugs')
 mongoose.Promise = global.Promise
+// const validator = require('validator')
 
 const bookSchema = new mongoose.Schema({
   title: {
@@ -18,7 +19,7 @@ const bookSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  ibsn: {
+  isbn: {
     type: String,
     trim: true
   },
