@@ -13,3 +13,26 @@ exports.menu = [
 exports.tags = [
   'Beginner', 'Advanced', 'Expert', 'General', 'Frontend', 'Backend'
 ]
+
+exports.shortenString = function(string, characters) {
+  if (string === undefined) {
+    return ''
+  }
+
+  if (string.length <= characters) {
+    return string
+  }
+
+  const words = string.split(' ')
+  let result = '';
+
+  for (word of words) {
+    if (result.length + word.length <= characters) {
+      result += ' ' + word
+    } else {
+      break
+    }
+  }
+
+  return `${result}...`
+}

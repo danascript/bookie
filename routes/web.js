@@ -12,7 +12,7 @@ router.post('/addBook', catchErrors(bookController.saveBook))
 
 
 router.get('/books/:slug', catchErrors(bookController.getBookBySlug))
-
+router.get('/books', catchErrors(bookController.booksList))
 
 router.get('/tags')
 

@@ -28,7 +28,7 @@ $fa-font-path: "~font-awesome/fonts";
 // FLASH ALERTS
 
 .alert {
-  padding: 1.5rem 1.25rem;
+  padding: 1rem 1.25rem;
   height: 60px;
 }
 
@@ -40,8 +40,13 @@ body {
 }
 
 
+
 #navigation {
   background-color: white;
+
+  .navbar-toggler-icon {
+    background-image: url('/images/menu.png')
+  }
 
   .container {
     width: 55%;
@@ -187,6 +192,43 @@ body {
         font-weight: bold;
       }
       
+    }
+  }
+
+  .tagcategory {
+    padding: .5rem .7rem;
+    border: 1px solid $pink;
+    border-radius: 10px;
+    margin: .5rem;
+  }
+}
+
+#booklist {
+  width: 95%;
+
+  h2 {
+    margin: 9rem 0 2rem 1rem;
+  }
+  
+  .book {
+    border: 1px solid $pink;
+    border-radius: .7rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    min-height: 180px;
+
+    a {
+      color: grey;
+      text-decoration: none;
+    }
+    &:hover {
+      border: 2px solid $pink;
+      transition: all .5s;
+      
+      a {
+        color: $pink;
+        text-decoration: none;
+      }
     }
   }
 }

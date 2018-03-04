@@ -8,17 +8,17 @@ mixin addBookForm(book = {})
     input(type='text' name='author' id='author' required)
 
     label(for='isbn') ISBN
-    input(type='text' name='isbn' id='isbn' required)
+    input(type='text' name='isbn' id='isbn')
 
     label(for='link') Link
     input(type='text' name='link' id='link' required)
 
-    label(for='published') Published
-    //- SHOULD BE A DATE PICKER
-    input(type='date' name='published' id='published' required)
+    //- label(for='published') Published
+    //- //- SHOULD BE A DATE PICKER
+    //- input(type='date' name='published' id='published' required)
 
     label(for='description') Description
-    textarea(name='description')
+    textarea(name='description' required)
 
     - const bookTags = book.tags || []
       ul.container

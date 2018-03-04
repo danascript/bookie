@@ -25,7 +25,6 @@ const bookSchema = new mongoose.Schema({
   },
   tags: [String],
   link: String,
-  published: Date,
   // user: {
   //   type: mongoose.Schema.ObjectId,
   //   ref: 'User',

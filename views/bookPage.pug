@@ -3,23 +3,23 @@ extends layout
 block content
   .container#bookPage
     .row.d-flex.justify-content-center
-      .col-6.book-info
+      .col-12.col-md-6.book-info
         h2.display-3= book.title
         h5.display-4= book.author
         h6= book.isbn
-      .col-4.book-pic
+      .col-12.col-md-4.book-pic
         .pic
           img.img-fluid(src='/509464153-1.jpg')
         .link
           #{book.link}
     
     .row.d-flex.justify-content-center
-      .col-6.book-otherinfo
+      .col-12.col-md-6.book-otherinfo
         p <b>Categories:</b> 
           - const tags = book.tags
             each tag in tags 
-              | #{tag}
+              | <span class="tagcategory">#{tag}</span>
 
         p <b>Description:</b> #{book.description}
-      .col-4
+      .col-12.col-md-4
         a.col-12.btn.btn-danger(href=`${book.link}`) To the book

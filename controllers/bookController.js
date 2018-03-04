@@ -34,3 +34,12 @@ exports.getBookBySlug = async (req, res, next) => {
     book
   })
 }
+
+exports.booksList = async (req, res) => {
+  const books = await Book.find()
+  
+  res.render('books', {
+    title: 'Books',
+    books
+  })
+}

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container#booklist
+    h2= title
+    .row.d-flex.justify-content-center
+      each book in books 
+        .col-12.col-sm-6.col-lg-4
+          .book
+            a(href=`/books/${book.slug}`)
+              h3= book.title
+              p= book.author
+              p= helpers.shortenString(book.description, 70)

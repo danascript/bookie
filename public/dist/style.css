@@ -9303,7 +9303,7 @@ a.text-dark:hover, a.text-dark:focus {
 /* 3. Starter Template
 -------------------------------------------*/
 .alert {
-  padding: 1.5rem 1.25rem;
+  padding: 1rem 1.25rem;
   height: 60px; }
 
 body {
@@ -9311,6 +9311,8 @@ body {
 
 #navigation {
   background-color: white; }
+  #navigation .navbar-toggler-icon {
+    background-image: url("/images/menu.png"); }
   #navigation .container {
     width: 55%; }
   #navigation .navbar-brand {
@@ -9401,5 +9403,32 @@ body {
       text-transform: uppercase; }
   #bookPage .book-otherinfo .bold {
     font-weight: bold; }
+  #bookPage .tagcategory {
+    padding: .5rem .7rem;
+    border: 1px solid #df0038;
+    border-radius: 10px;
+    margin: .5rem; }
+
+#booklist {
+  width: 95%; }
+  #booklist h2 {
+    margin: 9rem 0 2rem 1rem; }
+  #booklist .book {
+    border: 1px solid #df0038;
+    border-radius: .7rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    min-height: 180px; }
+    #booklist .book a {
+      color: grey;
+      text-decoration: none; }
+    #booklist .book:hover {
+      border: 2px solid #df0038;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s; }
+      #booklist .book:hover a {
+        color: #df0038;
+        text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map*/
