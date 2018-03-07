@@ -33,13 +33,15 @@ $fa-font-path: "~font-awesome/fonts";
 }
 
 
+// FORM OUTLINE 
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus { border-color: rgba(255, 255, 255, 0.8); box-shadow: 0 1px 1px rgba(41, 41, 41, 0.274) inset, 0 0 8px rgba(68, 65, 64, 0.6); outline: 0 none; }
+
 // GENERAL STYLING RULES:
 
 body {
   margin-top: 80px;
 }
-
-
 
 #navigation {
   background-color: white;
@@ -103,11 +105,13 @@ body {
 #mainImage {
   width: 50%;
   padding-top: 5%;
+  
   img {
     height: 265px;
   }
 
   h2 {
+    color: $main;
     margin-bottom: 1rem;
   }
   
@@ -134,6 +138,11 @@ body {
 
     input {
       padding: .4rem;
+    }
+
+    input[type='text'], textarea {
+      border: none;
+      border-bottom: 1px solid black;
     }
 
     .tag {
@@ -207,6 +216,7 @@ body {
   width: 95%;
 
   h2 {
+    color: $main;
     margin: 9rem 0 2rem 1rem;
   }
   
@@ -217,12 +227,16 @@ body {
     margin: 1rem 0;
     min-height: 180px;
 
+    .description {
+      font-size: .9rem;
+    }
+
     a {
       color: grey;
       text-decoration: none;
     }
     &:hover {
-      border: 2px solid $pink;
+      box-shadow: 0px 0px 10px #a8a8a8;
       transition: all .5s;
       
       a {

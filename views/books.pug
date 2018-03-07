@@ -10,4 +10,4 @@ block content
             a(href=`/books/${book.slug}`)
               h3= book.title
               p= book.author
-              p= helpers.shortenString(book.description, 70)
+              p.description= helpers.shortenString(book.description, 80)
