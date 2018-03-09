@@ -43,3 +43,20 @@ exports.booksList = async (req, res) => {
     books
   })
 }
+
+exports.getBooksByTags = async (req, res) => {
+  const tag = req.params.tag
+  const tagQuery = tag || { $exists: true }
+
+  const tagsPromise = Book.getTagsList()
+  const booksPromise = Book.find({ tags: tagQuery })
+  
+  const [tags, books] = await Promise.all([ tagsPromise, booksPromise ])
+
+  res.render('tags', {
+    title: 'Find books by tags',
+    books,
+    tags,
+    tag
+  })
+}

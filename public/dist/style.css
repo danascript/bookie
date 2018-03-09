@@ -9313,7 +9313,14 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   outline: 0 none; }
 
 body {
-  margin-top: 80px; }
+  margin-top: 80px;
+  position: relative;
+  padding-bottom: 150px;
+  height: 100%; }
+  @media (max-width: 991.98px) {
+    body {
+      margin-top: 40px;
+      padding-bottom: 90px; } }
 
 #navigation {
   background-color: white; }
@@ -9321,6 +9328,9 @@ body {
     background-image: url("/images/menu.png"); }
   #navigation .container {
     width: 55%; }
+    @media (max-width: 991.98px) {
+      #navigation .container {
+        width: 80%; } }
   #navigation .navbar-brand {
     color: #df0038; }
   #navigation .navbar-nav {
@@ -9357,9 +9367,9 @@ body {
 
 #mainImage {
   width: 50%;
-  padding-top: 5%; }
+  padding: 10% 0; }
   #mainImage img {
-    height: 265px; }
+    max-height: 265px; }
   #mainImage h2 {
     color: #272727;
     margin-bottom: 1rem; }
@@ -9369,11 +9379,26 @@ body {
     #mainImage a:hover {
       background-color: #2f9752;
       border-color: #2f9752; }
+  @media (max-width: 1199.98px) {
+    #mainImage {
+      width: 80%; } }
+  @media (max-width: 991.98px) {
+    #mainImage {
+      width: 90%;
+      padding: 15% 0; }
+      #mainImage img {
+        display: none; }
+      #mainImage .display-4 {
+        text-align: center !important; }
+      #mainImage a {
+        margin-right: 1.5rem; } }
 
 #formContainer {
-  margin-top: 7rem; }
+  margin-top: 7rem;
+  margin-bottom: 3rem; }
   #formContainer .card {
-    border: none; }
+    border: none;
+    position: relative; }
     #formContainer .card label {
       margin: 1rem .3rem 0 0; }
     #formContainer .card input {
@@ -9392,14 +9417,22 @@ body {
       #formContainer .card .tag label {
         margin: .3rem .6rem .3rem 1.7rem; }
       #formContainer .card .tag .custom-control-label::before {
+        position: absolute;
         top: 1rem;
         left: .4rem; }
       #formContainer .card .tag .custom-control-label::after {
+        position: absolute;
         top: 1rem;
         left: .4rem; }
       #formContainer .card .tag .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
       #formContainer .card .tag .custom-control-input:checked ~ .custom-control-label::before {
         background-color: #df0038; }
+    #formContainer .card input[type='submit'] {
+      border: 1px solid #272727; }
+      #formContainer .card input[type='submit']:hover {
+        background-color: #df0038;
+        color: white;
+        border: none; }
 
 #bookPage {
   margin-top: 7rem;
@@ -9418,9 +9451,20 @@ body {
     border: 1px solid #df0038;
     border-radius: 10px;
     margin: .5rem; }
+    #bookPage .tagcategory a {
+      color: #df0038;
+      text-decoration: none; }
+      #bookPage .tagcategory a:hover {
+        font-weight: 700; }
+  @media (max-width: 991.98px) {
+    #bookPage .display-3 {
+      font-size: 2.5rem; }
+    #bookPage .display-4 {
+      font-size: 2rem; } }
 
 #booklist {
-  width: 95%; }
+  width: 95%;
+  margin-bottom: 2rem; }
   #booklist h2 {
     color: #272727;
     margin: 9rem 0 2rem 1rem; }
@@ -9444,5 +9488,92 @@ body {
       #booklist .book:hover a {
         color: #df0038;
         text-decoration: none; }
+  @media (max-width: 1199.98px) {
+    #booklist {
+      width: 80%; } }
+  @media (max-width: 991.98px) {
+    #booklist {
+      width: 90%; }
+      #booklist h2 {
+        margin-top: 4rem; } }
+
+#tags h2 {
+  margin: 9rem 0 2rem 1rem; }
+
+#tags ul {
+  list-style-type: none;
+  padding-left: 0; }
+  #tags ul .tag {
+    display: inline-block;
+    margin-right: 1rem;
+    border: 1px solid #272727;
+    border-radius: 10px;
+    padding: .5rem; }
+    #tags ul .tag a {
+      color: #272727; }
+      #tags ul .tag a:hover {
+        text-decoration: none;
+        font-weight: 700; }
+    #tags ul .tag-name {
+      margin-right: .5rem; }
+    #tags ul .tag-active {
+      font-weight: 700; }
+  #tags ul a.tag-active {
+    color: #df0038;
+    border-color: #df0038; }
+
+#tags .book {
+  border: 1px solid #df0038;
+  border-radius: .7rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  min-height: 180px; }
+  #tags .book .description {
+    font-size: .9rem; }
+  #tags .book a {
+    color: grey;
+    text-decoration: none; }
+  #tags .book:hover {
+    -webkit-box-shadow: 0px 0px 10px #a8a8a8;
+            box-shadow: 0px 0px 10px #a8a8a8;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s; }
+    #tags .book:hover a {
+      color: #df0038;
+      text-decoration: none; }
+
+#footer {
+  color: #272727;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0; }
+  #footer .container {
+    width: 60%;
+    margin: 0 auto; }
+    #footer .container p {
+      margin: .5rem 0; }
+    #footer .container a {
+      color: #df0038; }
+  #footer ul {
+    list-style-type: none;
+    margin-bottom: 0; }
+    #footer ul a.nav-link {
+      display: inline-block;
+      padding: .5rem; }
+      #footer ul a.nav-link:hover {
+        color: #272727;
+        font-size: 1.2rem; }
+  @media (max-width: 991.98px) {
+    #footer {
+      padding: .5rem;
+      font-size: .85rem; }
+      #footer .container {
+        width: 100%;
+        padding-left: 0; }
+      #footer ul a.nav-link {
+        padding-top: 1rem; }
+        #footer ul a.nav-link:hover {
+          font-size: .9rem; } }
 
 /*# sourceMappingURL=style.css.map*/

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container
+    #tags
+      .container-fluid
+        h2 #{tag || 'Search by Tags'}
+        ul
+          each t in tags 
+            li.tag
+              a(href=`/tags/${t._id}` class=(t._id === tag ? 'tag-active': ''))
+                span.tag-name= t._id
+                span.tag-count= t.count
+        
+        .row.d-flex.justify-content-center
+          each book in books 
+            .col-12.col-sm-6.col-lg-4
+              .book
+                a(href=`/books/${book.slug}`)
+                  h3= book.title
+                  p= book.author
+                  p.description= helpers.shortenString(book.description, 80)

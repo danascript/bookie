@@ -41,6 +41,14 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus { border
 
 body {
   margin-top: 80px;
+  position: relative;
+  padding-bottom: 150px;;
+  height: 100%;
+
+  @include media-breakpoint-down(md) { 
+    margin-top: 40px;
+    padding-bottom: 90px;
+  }
 }
 
 #navigation {
@@ -52,6 +60,10 @@ body {
 
   .container {
     width: 55%;
+
+    @include media-breakpoint-down(md) { 
+      width: 80%;
+    }
   }
 
   .navbar-brand {
@@ -104,12 +116,13 @@ body {
 
 #mainImage {
   width: 50%;
-  padding-top: 5%;
+  padding: 10% 0;
+  
   
   img {
-    height: 265px;
+    max-height: 265px;
   }
-
+  
   h2 {
     color: $main;
     margin-bottom: 1rem;
@@ -118,19 +131,45 @@ body {
   a {
     margin-right: 1rem;
     color: white;
-
+    
     &:hover {
       background-color: $green;
       border-color: $green;
     }
   }
+
+  @include media-breakpoint-down(lg) { 
+    width: 80%;
+    
+  }
+  
+  @include media-breakpoint-down(md) { 
+    width: 90%;
+    padding: 15% 0;
+
+    img {
+      display: none;
+    }
+
+    .display-4 {
+      text-align: center !important;
+    }
+
+    a {
+      margin-right: 1.5rem;
+    }
+  }
+
+
 }
 
 #formContainer {
   margin-top: 7rem;
+  margin-bottom: 3rem; 
 
   .card {
     border: none;
+    position: relative;
 
     label {
       margin: 1rem .3rem 0 0;
@@ -163,17 +202,28 @@ body {
       }
 
       & .custom-control-label::before {
+        position: absolute;
         top: 1rem;
         left: .4rem;
       }
 
       & .custom-control-label::after {
+        position: absolute;
         top: 1rem;
         left: .4rem;
       }
       & .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, 
       & .custom-control-input:checked ~ .custom-control-label::before {
         background-color: $pink;
+      }
+    }
+
+    input[type='submit'] {
+      border: 1px solid $main;
+      &:hover {
+        background-color: $pink;
+        color: white;
+        border: none;
       }
     }
   }
@@ -188,13 +238,15 @@ body {
   .book {
     &-info {
       margin-bottom: 1rem;
+
+      
       
       h6 {
         color: rgb(109, 109, 109);
         text-transform: uppercase;
       }
     }
-
+    
     &-otherinfo {
       
       .bold {
@@ -203,18 +255,38 @@ body {
       
     }
   }
-
+  
   .tagcategory {
     padding: .5rem .7rem;
     border: 1px solid $pink;
     border-radius: 10px;
     margin: .5rem;
+    
+    a {
+      color: $pink;
+      text-decoration: none;
+      
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+  
+  @include media-breakpoint-down(md) {
+    .display-3 {
+      font-size: 2.5rem;
+    }
+  
+    .display-4 {
+      font-size: 2rem;
+    }
   }
 }
 
 #booklist {
   width: 95%;
-
+  margin-bottom: 2rem;
+  
   h2 {
     color: $main;
     margin: 9rem 0 2rem 1rem;
@@ -244,5 +316,141 @@ body {
         text-decoration: none;
       }
     }
+  }
+
+  @include media-breakpoint-down(lg) { 
+    width: 80%;
+    
+  }
+  
+  @include media-breakpoint-down(md) { 
+    width: 90%;
+    h2 {
+      margin-top: 4rem;
+    }
+  }
+}
+
+#tags {
+  h2 {
+    margin: 9rem 0 2rem 1rem;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    
+    .tag {
+      display: inline-block;
+      margin-right: 1rem;
+      border: 1px solid $main;
+      border-radius: 10px;
+      padding: .5rem;
+
+      a {
+        color: $main;
+        &:hover {
+          text-decoration: none;
+          font-weight: 700;
+        }
+      }
+
+      &-name {
+        margin-right: .5rem;
+      }
+
+      // &-count {
+        
+      // }
+
+      &-active {
+        font-weight: 700;
+      }
+    }
+    a.tag-active {
+      color: $pink;
+      border-color: $pink;
+    }
+  }
+
+  .book {
+    border: 1px solid $pink;
+    border-radius: .7rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    min-height: 180px;
+
+    .description {
+      font-size: .9rem;
+    }
+
+    a {
+      color: grey;
+      text-decoration: none;
+    }
+    &:hover {
+      box-shadow: 0px 0px 10px #a8a8a8;
+      transition: all .5s;
+      
+      a {
+        color: $pink;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#footer {
+  color: $main;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+
+  .container {
+    width: 60%;
+    margin: 0 auto;
+
+    p {
+      margin: .5rem 0;
+    }
+    
+    a {
+      color: $pink;
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    
+    a.nav-link {
+      display: inline-block;
+      padding: .5rem;
+
+      &:hover {
+        color: $main;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  @include media-breakpoint-down(md) { 
+    padding: .5rem;
+
+    .container {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    ul {    
+      a.nav-link {
+        padding-top: 1rem;
+
+        &:hover {
+          font-size: .9rem;
+        }
+      }
+    }
+
+    font-size: .85rem;
   }
 }

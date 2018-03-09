@@ -11,7 +11,7 @@ exports.menu = [
 ];
 
 exports.tags = [
-  'Beginner', 'Advanced', 'Expert', 'General', 'Frontend', 'Backend'
+  'Beginner', 'Advanced', 'Expert', 'General', 'Frontend', 'Backend', 'JavaScript', 'HTML&CSS', 'React.js', 'Node.js', 'MongoDB'
 ]
 
 exports.shortenString = function(string, characters) {

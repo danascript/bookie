@@ -21,8 +21,8 @@ mixin addBookForm(book = {})
     textarea(name='description' required)
 
     - const bookTags = book.tags || []
-      ul.container
-        .row.mt-2.d-flex.flex-row
+      .container
+        .row.mt-2.d-flex.justify-content-between
           each tag in helpers.tags
             .tag.p-2.custom-control.custom-checkbox
               input.custom-control-input(type='checkbox' id=tag value=tag name='tags' checked=(bookTags.includes(tag)))

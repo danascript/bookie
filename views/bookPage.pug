@@ -18,8 +18,8 @@ block content
         p <b>Categories:</b> 
           - const tags = book.tags
             each tag in tags 
-              | <span class="tagcategory">#{tag}</span>
-
+              span.tagcategory: a(href=`/tags/${tag}`) #{tag} 
+              
         p <b>Description:</b> #{book.description}
       .col-12.col-md-4
         a.col-12.btn.btn-danger(href=`${book.link}`) To the book

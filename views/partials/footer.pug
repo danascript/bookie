@@ -1,0 +1,11 @@
+.container-fluid#footer
+  .container
+    - const date = new Date()
+    - const year = date.getFullYear()
+    .row.d-flex.align-items-center
+      .col-7
+        p &copy; #{year} created by <a href='https://github.com/misslild'>misslild</a>
+      ul.col-5.text-right
+        a.nav-link(href='https://codepen.io/misslild/'): li.nav-item: i.fa.fa-codepen.fa-1x
+        a.nav-link(href='https://github.com/misslild/'): li.nav-item: i.fa.fa-github.fa-1x
+        a.nav-link(href='https://misslild.de/'): li.nav-item: i.fa.fa-link.fa-1x

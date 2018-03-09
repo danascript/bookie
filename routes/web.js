@@ -14,7 +14,8 @@ router.post('/addBook', catchErrors(bookController.saveBook))
 router.get('/books/:slug', catchErrors(bookController.getBookBySlug))
 router.get('/books', catchErrors(bookController.booksList))
 
-router.get('/tags')
+router.get('/tags', catchErrors(bookController.getBooksByTags))
+router.get('/tags/:tag', catchErrors(bookController.getBooksByTags))
 
 
 // Export our router
