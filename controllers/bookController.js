@@ -18,7 +18,7 @@ exports.addBook = (req, res) => {
 
 exports.saveBook = async (req, res) => {
   const book = await (new Book(req.body)).save()
-
+  
   req.flash('success', `Successfully saved ${book.title}.`)
   res.redirect(`./books/${book.slug}`)
 }

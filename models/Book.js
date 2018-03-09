@@ -19,10 +19,10 @@ const bookSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  isbn: {
-    type: String,
-    trim: true
-  },
+  // isbn: {
+  //   type: String,
+  //   trim: true
+  // },
   tags: [String],
   link: String,
   // user: {

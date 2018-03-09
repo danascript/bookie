@@ -218,11 +218,13 @@ body {
       }
     }
 
-    input[type='submit'] {
-      border: 1px solid $main;
+    input.btn {
+      border: 1px solid $pink;
+      background-color: transparent;
       &:hover {
-        background-color: $pink;
+        background-color: rgba(82, 80, 80, 0.322);
         color: white;
+        font-weight: 700;
         border: none;
       }
     }
@@ -355,7 +357,7 @@ body {
       }
 
       &-name {
-        margin-right: .5rem;
+        margin-right: 1.5rem;
       }
 
       // &-count {

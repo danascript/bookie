@@ -7,8 +7,8 @@ mixin addBookForm(book = {})
     label(for='author') Author
     input(type='text' name='author' id='author' required)
 
-    label(for='isbn') ISBN
-    input(type='text' name='isbn' id='isbn')
+    //- label(for='isbn') ISBN
+    //- input(type='text' name='isbn' id='isbn')
 
     label(for='link') Link
     input(type='text' name='link' id='link' required)
@@ -28,4 +28,4 @@ mixin addBookForm(book = {})
               input.custom-control-input(type='checkbox' id=tag value=tag name='tags' checked=(bookTags.includes(tag)))
               label.custom-control-label(for=tag)= tag
 
-    input(type='submit' value='Add It!' class='btn btn-light')
+    input.btn(type='submit' value='Add It!')

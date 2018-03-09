@@ -9427,11 +9427,13 @@ body {
       #formContainer .card .tag .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
       #formContainer .card .tag .custom-control-input:checked ~ .custom-control-label::before {
         background-color: #df0038; }
-    #formContainer .card input[type='submit'] {
-      border: 1px solid #272727; }
-      #formContainer .card input[type='submit']:hover {
-        background-color: #df0038;
+    #formContainer .card input.btn {
+      border: 1px solid #df0038;
+      background-color: transparent; }
+      #formContainer .card input.btn:hover {
+        background-color: rgba(82, 80, 80, 0.322);
         color: white;
+        font-weight: 700;
         border: none; }
 
 #bookPage {
@@ -9515,7 +9517,7 @@ body {
         text-decoration: none;
         font-weight: 700; }
     #tags ul .tag-name {
-      margin-right: .5rem; }
+      margin-right: 1.5rem; }
     #tags ul .tag-active {
       font-weight: 700; }
   #tags ul a.tag-active {
